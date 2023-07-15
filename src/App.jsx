@@ -2,7 +2,8 @@ import { useState } from 'react'
 import './App.css'
 import search from './assets/icons/search.svg'
 //import { useStateContext } from './Context'
-import Bglayout from './components/Bglayout'
+// import Bglayout from './components/Bglayout'
+import { Bglayout } from './components'
 
 function App() {
  
@@ -27,7 +28,7 @@ function App() {
           type="text" className='focus: outline-none w-full text-[#212121] text-lg' value={input} onChange={e => setInput (e.target.value)} />     
         </div>
       </nav>
-      <Bglayout></Bglayout>
+      <Bglayout />
     </div>
   )
 }
