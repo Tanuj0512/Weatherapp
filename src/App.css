@@ -1,0 +1,38 @@
+/* .maincontainer{
+    align-content: center;
+    flex:content;
+    flex-direction: row;
+    width : 54rem ;
+    height : 30rem;
+    min-width: 22rem;
+ 
+} */
+
+/* .mainweather {
+    align-content: center;
+    
+    
+   
+    align-items: center;
+    justify-items: center; 
+  }
+
+  .sidecard {
+    flex-direction:column; 
+    justify-content: center; 
+    gap:8; 
+    flex-wrap w-[60%];
+  }
+
+.glassCard {
+    flex-direction: row;
+}
+  */
+
+  .div{
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+  }
+
+ 

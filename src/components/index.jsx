@@ -1,3 +1,3 @@
-export {default as Bglayout} from './Bglayout'
-export {default as Minicard} from './Minicard'
-export {default as Weathercard} from './Weathercard'
+export {default as BGlayout} from './BGlayout'
+export {default as Sidecard} from './Sidecard'
+export {default as Mainweather} from './Mainweather'

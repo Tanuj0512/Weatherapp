@@ -1,56 +1,41 @@
+// code for setting background according to current weather 
+
 import React, { useEffect, useState } from 'react'
 import { useStateContext } from '../Context'
-//import { useStateContext } from '../Context'
-import Clear from '../assets/images/clear.jpg'
-import Fog from '../assets/images/Cloudy.jpg'
+import Clear from '../assets/images/Clear.jpg'
+import Fog from '../assets/images/fog.jpg'
 import Cloudy from '../assets/images/Cloudy.jpg'
 import Rainy from '../assets/images/Rainy.jpg'
-import Snow from '../assets/images/Snow.jpg'
+import Snow from '../assets/images/snow.jpg'
 import Stormy from '../assets/images/Stormy.jpg'
-import Sunny from '../assets/images/Sunny.jpg'
 
-const Bglayout = () => {
+const BGlayout = () => {
 
-  // const {weather} =useStateContext()
-  // console.log(weather)
+  const { weather } = useStateContext()
+  const [image, setImage] = useState(Clear)
 
-  const {weather} = useStateContext()
-  const [image, setImage]= useState(Clear)
-useEffect(() =>{
-
-})
-  //bg according to weather
-
-
-  useEffect(()=> {
-    if (weather.conditions){
-    let imageString = weather.conditions
-    if (imageString.tolowerCase().includes('clear')){
+  useEffect(() => {
+    if (weather.conditions) {
+      let imageString = weather.conditions
+      if (imageString.toLowerCase().includes('clear')) {
         setImage(Clear)
-
-      } else if  (imageString.tolowerCase().includes('cloud')) {
+      } else if (imageString.toLowerCase().includes('cloud')) {
         setImage(Cloudy)
-        
-      } else if  (imageString.tolowerCase().includes('rain') || imageString.tolowerCase().includes('shower')  ) {
+      } else if (imageString.toLowerCase().includes('rain') || imageString.toLowerCase().includes('shower')) {
         setImage(Rainy)
-
-      } else if  (imageString.tolowerCase().includes('snow')) {
+      } else if (imageString.toLowerCase().includes('snow')) {
         setImage(Snow)
-
-      } else if  (imageString.tolowerCase().includes('fog')) {
+      } else if (imageString.toLowerCase().includes('fog')) {
         setImage(Fog)
-
-      } else if  (imageString.tolowerCase().includes('thunder') || imageString.tolowerCase().includes('storm')) {
+      } else if (imageString.toLowerCase().includes('thunder') || imageString.toLowerCase().includes('storm')) {
         setImage(Stormy)
       }
     }
-  },[weather])
-
-  
+  }, [weather])
 
   return (
-   <img src={image} alt="Weather-image" className='h-screen w-full fixed left-0 top-0 -z-[10'/>
+    <img src={image} alt="weather_image" className='h-screen w-full fixed left-0 top-0 -z-[10]  backdrop-filter: blur(4px);' />
   )
 }
 
-export default Bglayout
+export default BGlayout
